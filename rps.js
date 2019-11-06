@@ -102,28 +102,3 @@ function playRPS(playerChoice, computerChoice){
         playerContent.remove(scissorsSelect);
     }
 }
-
-function game(){
-    numberOfGames = parseInt(prompt("How many games do you want to play?"));
-    if (Number.isInteger(numberOfGames)){
-        // while (roundCount <= numberOfGames){
-        //     playerChoice = prompt("Game " + roundCount + ". What you throwing?").toUpperCase();
-        //     playRPS(playerChoice, computerPlay());
-        //     roundCount += 1;
-        // }
-        startContent.appendChild(roundContent);
-        if (playerScore > computerScore){
-            console.log('You won ' + playerScore + '-' + computerScore);
-        }
-        else if (playerScore < computerScore){
-            console.log('You lost ' + playerScore + '-' + computerScore);
-        }
-        else {
-            console.log('You tied ' + playerScore + '-' + computerScore);
-        }
-    }
-    else{
-        alert("Please enter a number!");
-        game();
-    }
-}

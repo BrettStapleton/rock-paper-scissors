@@ -1,77 +1,23 @@
-<script>
-    function computerPlay(){
-        play = Math.floor(Math.random() * 3)
-        if (play == 0){
-            return 'ROCK'
-        }
-        else if (play == 1){
-            return 'PAPER'
-        }
-        else return 'SCISSORS'
-    }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Rock-Paper-Scissors</title>
+</head>
+<body>
+  <h1>Rock-Paper-Scissors Game</h1>
+  <div id="start-content">
+    <h2>First to 5</h2>
+  </div>
+  <div id="player-content">
+    <button id="btn-rock">Rock</button>
+    <button id="btn-paper">Paper</button>
+    <button id="btn-scissors">Scissors</button>
+  </div>
+  <div id="result-content">
 
-    function playRPS(playerChoice, computerChoice){
-        if (playerChoice == 'PAPER' && computerChoice == 'ROCK'){
-            playerScore += 1
-            console.log('You win! Paper beats Rock!')
-        }
-        else if (playerChoice == 'ROCK' && computerChoice == 'SCISSORS'){
-            playerScore += 1
-            console.log('You win! Rock beats Scissors!')
-        }
-        else if (playerChoice == 'SCISSORS' && computerChoice == 'PAPER'){
-            playerScore += 1
-            console.log('You win! Scissors beats Paper!')
-        }
-        else if (playerChoice == 'ROCK' && computerChoice == 'PAPER'){
-            computerScore += 1
-            console.log('You lose! Rock loses to Paper!')
-        }
-        else if (playerChoice == 'SCISSORS' && computerChoice == 'ROCK'){
-            computerScore += 1
-            console.log('You lose! Scissors loses to Rock!')
-        }
-        else if (playerChoice == 'PAPER' && computerChoice == 'SCISSORS'){
-            computerScore += 1
-            console.log('You lose! Paper loses to Scissors!')
-        }
-        else if (playerChoice == computerChoice){
-            gameCount -= 1
-            console.log("It's a tie! Go again!")
-            alert("It's a tie! Go again!")
-        }
-        else{
-            gameCount -= 1
-            alert("Incorrect input!")
-        }
-    }
-
-    function game(){
-        numberOfGames = parseInt(prompt("How many games do you want to play?"))
-        if (Number.isInteger(numberOfGames)){
-            gameCount = 1
-            playerScore = 0
-            computerScore = 0
-            while (gameCount <= numberOfGames){
-                playerChoice = prompt("Game " + gameCount + ". What you throwing?").toUpperCase()
-                playRPS(playerChoice, computerPlay())
-                gameCount += 1
-            }
-            if (playerScore > computerScore){
-                console.log('You won ' + playerScore + '-' + computerScore)
-            }
-            else if (playerScore < computerScore){
-                console.log('You lost ' + playerScore + '-' + computerScore)
-            }
-            else {
-                console.log('You tied ' + playerScore + '-' + computerScore)
-            }
-        }
-        else{
-            alert("Please enter a number!")
-            game()
-        }
-    }
-
-    game()
-</script>
+  </div>
+    
+<script src="rps.js"></script>
+</body>
+</html>
